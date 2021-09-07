@@ -15,9 +15,9 @@ class DatabaseConnection {
             $pass = '';
 
             try {
-                self::$instance = new PDO('mysql:host=localhost;dbname=app_mobile', $user, $pass);
+                self::$instance = new PDO('mysql:host=localhost;dbname=shopping_list', $user, $pass);
                 self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
-                echo 'instanciation succeeded.';
+                // echo 'instanciation succeeded.';
                 self::$instance->query('SET NAMES utf8');
                 self::$instance->query('SET CHARACTER SET utf8');
 

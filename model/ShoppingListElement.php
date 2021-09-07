@@ -3,20 +3,20 @@
 require_once('BaseModel.php');
 
 class ShoppingListElement extends BaseModel {
-    private $id;
-    private $idUser;
-    private $idShoppingList;
-    private $idProduct;
-    private $quantity;
-    private $isChecked;
+    private ?int $id;
+    private int $idUser;
+    private int $idShoppingList;
+    private int $idProduct;
+    private int $quantity;
+    private bool $isChecked;
 
     public function __construct(
-        $idUser = null, 
-        $idShoppingList = null, 
-        $idProduct = null, 
-        $quantity = null,
-        $isChecked = null,
-        $id = null)
+        ?int $idUser = null, 
+        int $idShoppingList = null, 
+        int $idProduct = null, 
+        int $quantity = null,
+        bool $isChecked = null,
+        int $id = null)
     {
         parent::__construct(array_keys(get_class_vars(get_class($this))), get_class($this));
         $this->idUser = $idUser;
@@ -35,9 +35,9 @@ class ShoppingListElement extends BaseModel {
     public function getIsChecked() {return $this->isChecked;}
 
     // No setter for id.
-    public function setIdUser($v) {$this->id = $v;}
-    public function setIdShoppingList($v) {$this->idShoppingList = $v;}
-    public function setIdProduct($v) {$this->idProduct = $v;}
-    public function setQuantity($v) {$this->quantity = $v;}
-    public function setIsChecked($v) {$this->isChecked = $v;}
+    public function setIdUser(int $v) {$this->id = $v;}
+    public function setIdShoppingList(int $v) {$this->idShoppingList = $v;}
+    public function setIdProduct(int $v) {$this->idProduct = $v;}
+    public function setQuantity(int $v) {$this->quantity = $v;}
+    public function setIsChecked(bool $v) {$this->isChecked = $v;}
 }

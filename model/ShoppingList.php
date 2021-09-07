@@ -3,18 +3,18 @@
 require_once('BaseModel.php');
 
 class ShoppingList extends BaseModel {
-    private $id;
-    private $idUser;
-    private $idShoppingListElement;
+    private ?int $id;
+    private int $idUser;
+    private int $idShoppingListElement;
     private $date;
-    private $isArchived;
+    private bool $isArchived;
 
     public function __construct(
-        $idUser = null, 
-        $idShoppingListElement = null, 
+        int $idUser = null, 
+        int $idShoppingListElement = null, 
         $date = null, 
-        $isArchived = null,
-        $id = null)
+        bool $isArchived = null,
+        ?int $id = null)
     {
         parent::__construct(array_keys(get_class_vars(get_class($this))), get_class($this));
         $this->idUser = $idUser;
@@ -31,8 +31,8 @@ class ShoppingList extends BaseModel {
     public function isArchived() {return $this->isArchived;}
 
     // No setter for id.
-    public function setIdUser($v) {$this->id = $v;}
-    public function setIdShoppingListElement($v) {$this->idShoppingListElement = $v;}
+    public function setIdUser(int $v) {$this->id = $v;}
+    public function setIdShoppingListElement(int $v) {$this->idShoppingListElement = $v;}
     public function setDate($v) {$this->date = $v;}
-    public function setIsArchived($v) {$this->isArchived = $v;}
+    public function setIsArchived(bool $v) {$this->isArchived = $v;}
 }

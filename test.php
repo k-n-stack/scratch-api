@@ -1,5 +1,23 @@
 <?php
 
+require_once('crud/ProductCRUD.php');
+require_once('model/Product.php');
+$prod = new Product('salade', 'http://blabla.com', 1.4);
+$crud = new ProductCRUD($prod);
+$crud->create();
+$crud->create();
+$crud->create();
+$crud->create();
+$crud->create();
+$crud->create();
+$crud->create();
+$crud->create();
+$crud->create();
+$crud->create();
+var_dump($crud);
+exit;
+
+
 require_once('model/ShoppingListElement.php');
 
 $variable = new ShoppingListElement();
