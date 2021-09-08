@@ -6,7 +6,7 @@ abstract class BaseModel {
 
     use BaseCRUD;
 
-    protected array $propertyNames;
+    protected $propertyNames;
 
     protected function __construct($childProperties, $childClassName) {
         $this->connection = DatabaseConnection::getInstance();

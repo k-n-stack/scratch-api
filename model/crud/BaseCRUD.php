@@ -4,8 +4,8 @@ require_once('model/singleton/DatabaseConnection.php');
 
 trait BaseCRUD {
 
-    protected PDO $connection;
-    protected string $query;
+    protected $connection;
+    protected $query;
 
     public function create() {
 
@@ -48,6 +48,15 @@ trait BaseCRUD {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    }
+
+    public function selecAll() {
+        $fields = $this->getPropertyNames();
+        $table = $fields['tableName']['snake'];
+        $this->query = 'SELECT * from '.$table;
+        $stmt = $this->connection->prepare($this->query);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function update(int $id = null) {

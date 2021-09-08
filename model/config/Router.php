@@ -7,9 +7,9 @@ class Router {
 
     private function __construct() {
         $this->routes = array();
-        $this->addRoute('GET', '/user', 'user');
+        $this->addRoute('GET', '/users', 'user');
         $this->addRoute('GET', '/list', 'list');
-        $this->addRoute('POST', '/user', 'user');
+        $this->addRoute('POST', '/users/*', 'user');
     }
     private function __clone() {}
 
