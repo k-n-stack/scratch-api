@@ -1,21 +1,10 @@
 <?php
 
-require_once('DatabaseConnection.model.php');
+require_once('model/config/Boostrap.php');
 
-$test = DatabaseConnection::getInstance();
+// header('Content-Type: application/json; charset=utf-8');
 
-echo print_r($test, true);
-
-$stmt = $test->prepare("INSERT INTO PRODUIT (nom, images, categorie, prix) VALUES (:nom, :images, :categorie, :prix)");
-$stmt->bindParam(':nom', $name);
-$stmt->bindParam(':images', $image);
-$stmt->bindParam(':categorie', $categorie);
-$stmt->bindParam(':prix', $prix);
-
-$name = 'test';
-$image = 'image';
-$categorie = 'cat';
-$prix = 20;
-
-
-$stmt->execute();
+$bootstrap = Bootstrap::getInstance();
+$response = $bootstrap->route();
+var_dump('index.php');
+var_dump($response);

@@ -1,6 +1,6 @@
 <?php
 
-require_once('BaseModel.php');
+require_once('model/BaseModel.php');
 
 class User extends BaseModel {
     private ?int $id;

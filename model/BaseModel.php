@@ -4,7 +4,7 @@ require_once('model/crud/BaseCRUD.php');
 
 abstract class BaseModel {
 
-    use BaseCRUD; 
+    use BaseCRUD;
 
     protected array $propertyNames;
 
