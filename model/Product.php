@@ -30,4 +30,10 @@ class Product extends BaseModel {
     public function setName(string $v) {$this->id = $v;}
     public function setImageUrl(string $v) {$this->imageUrl = $v;}
     public function setPrice(float $v) {$this->price = $v;}
+
+    public function create() {
+        parent::create();
+    }
+
+
 }

@@ -1,20 +1,19 @@
 <?php
 
-require_once('crud/ProductCRUD.php');
+// $date = date('Y-m-d H:i:s');
+
+// var_dump($date);
+// exit;
+
 require_once('model/Product.php');
-$prod = new Product('salade', 'http://blabla.com', 1.4);
-$crud = new ProductCRUD($prod);
-$crud->create();
-$crud->create();
-$crud->create();
-$crud->create();
-$crud->create();
-$crud->create();
-$crud->create();
-$crud->create();
-$crud->create();
-$crud->create();
-var_dump($crud);
+$prod = new Product('tropmegalol', 'http://amazon.com', 199.4, 5);
+$prod->update();
+
+exit;
+
+var_dump($prod->update(16));
+
+// var_dump($prod);
 exit;
 
 
