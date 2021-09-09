@@ -1,33 +1,14 @@
 <?php
 
-// $date = date('Y-m-d H:i:s');
+require_once('model/User.php');
 
-// var_dump($date);
-// exit;
+$user = new User(
+    'gandalf',
+    'legris',
+    'g.legris@gmail.com',
+    'shittypass'
+);
 
-require_once('model/Product.php');
-$prod = new Product('tropmegalol', 'http://amazon.com', 199.4, 5);
-$prod->update();
+var_dump($user->selecAll());
 
-exit;
-
-var_dump($prod->update(16));
-
-// var_dump($prod);
-exit;
-
-
-require_once('model/ShoppingListElement.php');
-
-$variable = new ShoppingListElement();
-var_dump($variable);
-exit;
-
-// print_r(preg_split('/((?:^|[A-Z])[a-z]+)/', 'unGrandTestDeVaribaleEnCamelCase'), true);
-// preg_match_all('/((?:^|[A-Z])[a-z]+)/','unGrandTestDeVaribaleEnCamelCase',$variable);
-preg_match_all('/((?:^|[A-Z])[a-z]+)/','un',$variable);
-
-$variable = preg_split('/(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])/', 'unGrandTestDeVaribaleEnCamelCase');
-$variable = preg_split('/(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])/', 'getDAOShit');
-
-print_r($variable);
+$user->create();

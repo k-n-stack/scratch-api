@@ -9,7 +9,7 @@ class Router {
         $this->routes = array();
         $this->addRoute('GET', '/users', 'user');
         $this->addRoute('GET', '/list', 'list');
-        $this->addRoute('POST', '/users/*', 'user');
+        $this->addRoute('POST', '/users', 'user');
     }
     private function __clone() {}
 
@@ -29,7 +29,7 @@ class Router {
     }
 
     private function importController($route) {
-        require_once('controller/'.$route['controller'].'Controller.php');
+        require_once('controller/'.ucfirst($route['controller']).'Controller.php');
         $_className = ucfirst($route['controller']).'Controller';
         $controller = new $_className();
         return $controller->run($route);

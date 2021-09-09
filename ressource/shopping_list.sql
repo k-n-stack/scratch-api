@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 08, 2021 at 09:52 PM
+-- Generation Time: Sep 09, 2021 at 08:46 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -106,7 +106,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `password`) VALUES
 (1, 'francis', 'lalane', 'f.lalane@gmail.com', 'shittymdp'),
-(2, 'Omegalul', 'kekland', 'kekomegalul@yahoo.fr', 'shittyMDP');
+(2, 'Omegalul', 'kekland', 'kekomegalul@yahoo.fr', 'shittyMDP'),
+(3, 'gandalf', 'legris', 'g.legris@gmail.com', 'shittypass'),
+(4, 'gandalf', 'lenoir', 'G.lebanc@gmail.com', 'shittypass');
 
 --
 -- Indexes for dumped tables
@@ -162,7 +164,7 @@ ALTER TABLE `shopping_list_element`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -20,13 +20,9 @@ trait BaseCRUD {
         $namedParams = $this->getNamedParams();
 
         $this->query = 'INSERT INTO '.$table.' '.$queryFields.' VALUES '.$namedParams;
-        var_dump($this->query);
         $stmt = $this->connection->prepare($this->query);
         foreach($fields['fieldNames'] as $field) {
             $func = $field['getter'];
-            #####
-            var_dump($func);
-            #####
             $stmt->bindValue(':'.$field['sql'], $this->$func());
         }
         $stmt->execute();
@@ -79,9 +75,6 @@ trait BaseCRUD {
 
         foreach($fields['fieldNames'] as $field) {
             $func = $field['getter'];
-            #####
-            var_dump($func);
-            #####
             $stmt->bindValue(':'.$field['sql'], $this->$func());
         }
         $stmt->bindValue(':id', $id);

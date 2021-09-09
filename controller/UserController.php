@@ -23,7 +23,7 @@ class UserController extends BaseController {
                 return $this->selectAllUsers();
                 break;
             case 'POST':
-                // return $this->addOneUser();
+                return $this->addOneUser();
                 break;  
             case 'DELETE':
                 break;         
@@ -35,5 +35,23 @@ class UserController extends BaseController {
 
     private function selectAllUsers() {
         return $this->user->selecAll();
+    }
+
+    private function addOneUser() {
+        $data = json_decode(file_get_contents('php://input'), true);
+        $this->user->setFirstname($data['firstname']);
+        $this->user->setLastname($data['lastname']);
+        $this->user->setEmail($data['email']);
+        $this->user->setPassword($data['password']);
+        $this->user->create();
+        return array(
+            'code' => 666,
+            'message' => 'add one user',
+            'user' => array(
+                'firstname' => $data['firstname'],
+                'lastname' => $data['lastname'],
+                'email' => $data['email']
+            )
+        );
     }
 }
