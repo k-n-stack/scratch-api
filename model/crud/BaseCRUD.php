@@ -20,6 +20,7 @@ trait BaseCRUD {
         $namedParams = $this->getNamedParams();
 
         $this->query = 'INSERT INTO '.$table.' '.$queryFields.' VALUES '.$namedParams;
+        // return $this->query;
         $stmt = $this->connection->prepare($this->query);
         foreach($fields['fieldNames'] as $field) {
             $func = $field['getter'];

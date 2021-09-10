@@ -10,6 +10,8 @@ class Router {
         $this->addRoute('GET', '/users', 'user');
         $this->addRoute('GET', '/list', 'list');
         $this->addRoute('POST', '/users', 'user');
+        $this->addRoute('POST', '/listelem', 'shoppingListElement');
+        $this->addRoute('GET', '/listelem', 'shoppingListElement');
     }
     private function __clone() {}
 
